@@ -1,0 +1,20 @@
+[package]
+name = "sw-conc-map-bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dashmap = "5.3.4"
+evmap = "11.0.0-alpha.7"
+flashmap = { path = "../flashmap" }
+flurry = "0.4.0"
+
+num_cpus = "1.13.1"
+rand = "0.8.5"
+usync = "0.2.1"
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+strip = "symbols"
+panic = "abort"
